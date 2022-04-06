@@ -76,5 +76,10 @@ namespace HatProject1
 
 
         }
+
+        private void dataGridViewHatModels_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
