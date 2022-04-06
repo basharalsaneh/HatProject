@@ -18,6 +18,7 @@ namespace HatProject1
             InitializeComponent();
         }
 
+        SqlConnection sc = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvko\source\repos\HatProject1\HatProject1\DatabaseH.mdf;Integrated Security=True");
         private void btnBackHat_Click(object sender, EventArgs e)
         {
             Form1Start openForm = new Form1Start();
@@ -37,30 +38,41 @@ namespace HatProject1
 
         private void btnAddHat_Click(object sender, EventArgs e)
         {
+
+
+            SqlCommand sm = new SqlCommand("insert into Hats values('"+HatName.Text+"')",sc);
+
+            sc.Open();
+
+            sm.ExecuteNonQuery();
+
+            sc.Close();
+            MessageBox.Show("new hat saved");
+
             //const string ConnectionString = "Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvko\source\repos\HatProject1\Data\Hats.mdf;Integrated Security = True";
             //SqlConnection conn = new SqlConnection(ConnectionString);
             //SqlCommand cmd = new SqlCommand("insert into (hName) values ('" + HatName.Text + "')", conn);
-            using (SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\anvko\\source\\repos\\HatProject1\\Data\\Hats.mdf;Integrated Security=True")) {
-                SqlCommand cmd = new SqlCommand("insert into (Table.name) values ('" + HatName.Text + "')",con);
-                cmd.Connection.Open();
+            //using (SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\anvko\\source\\repos\\HatProject1\\HatProject1\\DatabaseH.mdf;Integrated Security=True")) {
+            //    SqlCommand cmd = new SqlCommand("insert into (Hats.hName) values ('" + HatName.Text + "')",con);
+            //    cmd.Connection.Open();
 
-                int i = cmd.ExecuteNonQuery();
-                if (i != 0)
-                {
-                    MessageBox.Show("new hat saved");
+            //    int i = cmd.ExecuteNonQuery();
+            //    if (i != 0)
+            //    {
+            //        MessageBox.Show("new hat saved");
 
-                }
+            //    }
 
-                else
-                {
+            //    else
+            //    {
 
-                    MessageBox.Show("incorrect info");
+            //        MessageBox.Show("incorrect info");
 
-                }
-                cmd.Connection.Close();
-            }
+            //    }
+            //    cmd.Connection.Close();
+            //}
 
-           
+
 
 
         }
