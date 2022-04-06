@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.dataGridViewHatModels = new System.Windows.Forms.DataGridView();
+            this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LableCurrentHatModels = new System.Windows.Forms.Label();
             this.labelNewHatModels = new System.Windows.Forms.Label();
             this.HatName = new System.Windows.Forms.TextBox();
             this.HatSize = new System.Windows.Forms.TextBox();
-            this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddHat = new System.Windows.Forms.Button();
             this.btnBackHat = new System.Windows.Forms.Button();
@@ -42,10 +45,8 @@
             this.btnDeleteHat = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.CategoryText = new System.Windows.Forms.TextBox();
-            this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnToMaterial = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHatModels)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +63,26 @@
             this.dataGridViewHatModels.Size = new System.Drawing.Size(430, 357);
             this.dataGridViewHatModels.TabIndex = 0;
             this.dataGridViewHatModels.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHatModels_CellContentClick);
+            // 
+            // CName
+            // 
+            this.CName.HeaderText = "Name";
+            this.CName.Name = "CName";
+            // 
+            // Size
+            // 
+            this.Size.HeaderText = "Size";
+            this.Size.Name = "Size";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Category";
+            this.Column3.Name = "Column3";
+            // 
+            // Material
+            // 
+            this.Material.HeaderText = "Material";
+            this.Material.Name = "Material";
             // 
             // LableCurrentHatModels
             // 
@@ -95,14 +116,6 @@
             this.HatSize.Name = "HatSize";
             this.HatSize.Size = new System.Drawing.Size(100, 20);
             this.HatSize.TabIndex = 4;
-            // 
-            // richTextBox
-            // 
-            this.richTextBox.Location = new System.Drawing.Point(55, 247);
-            this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(224, 118);
-            this.richTextBox.TabIndex = 5;
-            this.richTextBox.Text = "";
             // 
             // label3
             // 
@@ -176,31 +189,31 @@
             this.CategoryText.Size = new System.Drawing.Size(100, 20);
             this.CategoryText.TabIndex = 12;
             // 
-            // CName
+            // btnToMaterial
             // 
-            this.CName.HeaderText = "Name";
-            this.CName.Name = "CName";
+            this.btnToMaterial.Location = new System.Drawing.Point(181, 13);
+            this.btnToMaterial.Name = "btnToMaterial";
+            this.btnToMaterial.Size = new System.Drawing.Size(98, 23);
+            this.btnToMaterial.TabIndex = 13;
+            this.btnToMaterial.Text = "Go to material";
+            this.btnToMaterial.UseVisualStyleBackColor = true;
+            this.btnToMaterial.Click += new System.EventHandler(this.btnToMaterial_Click);
             // 
-            // Size
+            // comboBox1
             // 
-            this.Size.HeaderText = "Size";
-            this.Size.Name = "Size";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Category";
-            this.Column3.Name = "Column3";
-            // 
-            // Material
-            // 
-            this.Material.HeaderText = "Material";
-            this.Material.Name = "Material";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(55, 257);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 14;
             // 
             // Form2Hat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnToMaterial);
             this.Controls.Add(this.CategoryText);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnDeleteHat);
@@ -209,7 +222,6 @@
             this.Controls.Add(this.btnBackHat);
             this.Controls.Add(this.btnAddHat);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.HatSize);
             this.Controls.Add(this.HatName);
             this.Controls.Add(this.labelNewHatModels);
@@ -230,7 +242,6 @@
         private System.Windows.Forms.Label labelNewHatModels;
         private System.Windows.Forms.TextBox HatName;
         private System.Windows.Forms.TextBox HatSize;
-        private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddHat;
         private System.Windows.Forms.Button btnBackHat;
@@ -243,5 +254,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Size;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Material;
+        private System.Windows.Forms.Button btnToMaterial;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

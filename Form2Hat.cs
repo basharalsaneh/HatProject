@@ -40,7 +40,7 @@ namespace HatProject1
         {
 
 
-            SqlCommand sm = new SqlCommand("insert into Hats values('"+HatName.Text+"')",sc);
+            SqlCommand sm = new SqlCommand("insert into Hats values('"+HatName.Text+ "','" + HatSize.Text + "','" + CategoryText.Text + "')", sc);
 
             sc.Open();
 
@@ -80,6 +80,14 @@ namespace HatProject1
         private void dataGridViewHatModels_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnToMaterial_Click(object sender, EventArgs e)
+        {
+            Form8Material ins = new Form8Material();
+            ins.MdiParent = this.MdiParent;
+            this.Hide();
+            ins.ShowDialog();
         }
     }
 }
