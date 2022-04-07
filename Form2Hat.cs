@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.IO;
 
 namespace HatProject1
 {
@@ -18,7 +20,9 @@ namespace HatProject1
             InitializeComponent();
         }
 
-        SqlConnection sc = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvko\source\repos\HatProject1\HatProject1\DatabaseH.mdf;Integrated Security=True");
+        //repos\HatProject1\HatProject1 => repos\HatProject1\DatabaseH.mdf
+        //Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())). Ska refaktoriseras för att bli lättare att läsa.
+        SqlConnection sc = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename= "+ Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + @"\DatabaseH.mdf;Integrated Security=True");
         private void btnBackHat_Click(object sender, EventArgs e)
         {
             Form1Start openForm = new Form1Start();
