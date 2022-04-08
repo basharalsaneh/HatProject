@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridViewHatModels = new System.Windows.Forms.DataGridView();
+            this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LableCurrentHatModels = new System.Windows.Forms.Label();
             this.labelNewHatModels = new System.Windows.Forms.Label();
             this.HatName = new System.Windows.Forms.TextBox();
@@ -43,20 +47,42 @@
             this.CategoryText = new System.Windows.Forms.TextBox();
             this.btnToMaterial = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Savebutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHatModels)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewHatModels
             // 
             this.dataGridViewHatModels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHatModels.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CName,
+            this.Size,
+            this.Column3,
+            this.Material});
             this.dataGridViewHatModels.Location = new System.Drawing.Point(334, 25);
             this.dataGridViewHatModels.Name = "dataGridViewHatModels";
-            this.dataGridViewHatModels.RowHeadersWidth = 82;
             this.dataGridViewHatModels.Size = new System.Drawing.Size(430, 357);
             this.dataGridViewHatModels.TabIndex = 0;
-            this.dataGridViewHatModels.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHatModels_CellContentClick);
             this.dataGridViewHatModels.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHatModels_CellContentClick);
+            // 
+            // CName
+            // 
+            this.CName.HeaderText = "Name";
+            this.CName.Name = "CName";
+            // 
+            // Size
+            // 
+            this.Size.HeaderText = "Size";
+            this.Size.Name = "Size";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Category";
+            this.Column3.Name = "Column3";
+            // 
+            // Material
+            // 
+            this.Material.HeaderText = "Material";
+            this.Material.Name = "Material";
             // 
             // LableCurrentHatModels
             // 
@@ -102,9 +128,9 @@
             // 
             // btnAddHat
             // 
-            this.btnAddHat.Location = new System.Drawing.Point(54, 321);
+            this.btnAddHat.Location = new System.Drawing.Point(58, 371);
             this.btnAddHat.Name = "btnAddHat";
-            this.btnAddHat.Size = new System.Drawing.Size(146, 26);
+            this.btnAddHat.Size = new System.Drawing.Size(100, 26);
             this.btnAddHat.TabIndex = 7;
             this.btnAddHat.Text = "Add";
             this.btnAddHat.UseVisualStyleBackColor = true;
@@ -141,13 +167,12 @@
             // 
             // btnDeleteHat
             // 
-            this.btnDeleteHat.Location = new System.Drawing.Point(128, 366);
+            this.btnDeleteHat.Location = new System.Drawing.Point(689, 388);
             this.btnDeleteHat.Name = "btnDeleteHat";
             this.btnDeleteHat.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteHat.TabIndex = 11;
             this.btnDeleteHat.Text = "Delete";
             this.btnDeleteHat.UseVisualStyleBackColor = true;
-            this.btnDeleteHat.Click += new System.EventHandler(this.btnDeleteHat_Click);
             // 
             // label4
             // 
@@ -182,23 +207,11 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 14;
             // 
-            // Savebutton
-            // 
-            this.Savebutton.Location = new System.Drawing.Point(54, 365);
-            this.Savebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Savebutton.Name = "Savebutton";
-            this.Savebutton.Size = new System.Drawing.Size(68, 26);
-            this.Savebutton.TabIndex = 15;
-            this.Savebutton.Text = "Save";
-            this.Savebutton.UseVisualStyleBackColor = true;
-            this.Savebutton.Click += new System.EventHandler(this.Savebutton_Click);
-            // 
             // Form2Hat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 406);
-            this.Controls.Add(this.Savebutton);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnToMaterial);
             this.Controls.Add(this.CategoryText);
@@ -237,8 +250,11 @@
         private System.Windows.Forms.Button btnDeleteHat;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox CategoryText;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Material;
         private System.Windows.Forms.Button btnToMaterial;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button Savebutton;
     }
 }
